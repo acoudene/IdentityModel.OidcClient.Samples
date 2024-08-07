@@ -21,13 +21,13 @@ public static class MauiProgram
         // setup OidcClient
         builder.Services.AddSingleton(new OidcClient(new()
         {
-            Authority = "https://demo.duendesoftware.com",
+          Authority = "https://tdkeycloak.azurewebsites.net/auth/realms/Technidata",
+          ClientId = "tdnexlabs",
+          Scope = "openid profile email",
+          RedirectUri = "http://127.0.0.1/sample-wpf-app",
+          //RedirectUri = "myapp://callback",
 
-            ClientId = "interactive.public",
-            Scope = "openid profile api",
-            RedirectUri = "myapp://callback",
-
-            Browser = new MauiAuthenticationBrowser()
+          Browser = new MauiAuthenticationBrowser()
         }));
 
         return builder.Build();

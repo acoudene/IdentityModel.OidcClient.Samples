@@ -18,8 +18,9 @@ namespace WpfWebView2
         {
             var options = new OidcClientOptions()
             {
-                Authority = "https://tdkeycloak.azurewebsites.net/auth/realms/Technidata",
-                ClientId = "tdnexlabs",
+              //Authority = "https://tdkeycloak.azurewebsites.net/auth/realms/Technidata",
+              Authority = "http://localhost:9080/realms/Technidata",
+              ClientId = "tdnexlabs",
                 Scope = "openid profile email",
                 RedirectUri = "http://127.0.0.1/sample-wpf-app",
                 Browser = new WpfEmbeddedBrowser(),
